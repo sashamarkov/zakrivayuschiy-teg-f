@@ -9,3 +9,108 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+@keyframes scale-in-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.button:not(.card__icon-button)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--base-color, #fff);
+  transition: translate 0.5s ease-in-out;
+  mix-blend-mode: difference;
+  translate: -100% 0%;
+}
+
+.button:not(.card__icon-button):hover::before {
+  translate: 0% 0%;
+}
+
+.core,
+.main-body {
+  transition: fill 0.3s ease;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--contrast-color, #000);
+  transition: fill 0.3s ease;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--contrast-color, #000);
+  transition: fill 0.3s ease 0.05s;
+}
+
+.card__icon-button:not(:hover) .core {
+  transition: fill 0.3s ease 0.03s;
+}
+
+.card__icon-button:not(:hover) .main-body {
+  transition: fill 0.3s ease;
+}
+
+.card__icon-button:active .core {
+  fill: var(--accent-color, #f00);
+  transition: fill 0.3s ease;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--accent-color, #f00);
+  transition: fill 0.3s ease 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--accent-color, #f00);
+  transition: fill 0.3s ease;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--accent-color, #f00);
+  transition: fill 0.3s ease 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--accent-color, #f00);
+  transition: fill 0.3s ease 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: content-boundary;
+  animation: scale-in-out 0.3s ease-in 0.1s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: fade-in-out 0.3s ease-in 0.3s;
+}
+
+.like-icon:not(.is-liked) .contour {
+  fill: var(--contrast-color, #000);
+  transition: fill 0.1s linear;
+}

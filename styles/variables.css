@@ -1,1 +1,46 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  /* Переменные для задания основного шрифта страницы. */
+  --main-font: "Inter";
+  --accent-font: "PressStart2P";
+  --font-weight-text: 400;
+  --font-weight-title: 700;
+  --primary-font-size: 1.125rem;
+  --logo-font-size: clamp(3.0625rem, 2.4427rem + 2.6446vw, 4.0625rem);
+  --heading-font-size: clamp(0.875rem, 0.5263rem + 1.4876vw, 1.4375rem);
+  /* Переменные для задания фона страницы.*/
+  --bg-gradient: repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px),
+    repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px),
+    linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+  --page-bg-color: #fff;
+  --page-text-color: #000;
+  --page-accent-color: rgb(4, 4, 4);
+  --bg-btn-color: transparent;
+
+  
+  
+
+  --section-inline-size: clamp(23.438rem, 50.077vw + 11.701rem, 43.75rem);
+  --header-padding: clamp(7.5rem, 1.322vw + 7.19rem, 8rem);
+  --border: 0.125rem solid var(--page-text-color);
+  --gap: 50px;
+  --text-case: uppercase;
+}
+
+.card__content {
+  --gap: 25px;
+}
+
+
+.save__button {
+  --section-inline-size: clamp(19.125rem, 8.923vw + 17.034rem, 20.938rem);
+  --bg-btn-color: var(--page-bg-color);
+}
+
+@media (width < 376px) {
+  :root {
+    --logo-text-size: clamp(2.375rem, 1rem + 4.5vw, 3.0625rem);
+    --section-inline-size: 100%;
+    --header-padding: clamp(5.625rem, 3.125rem + 7.5vw, 7.5rem);
+  }
+}

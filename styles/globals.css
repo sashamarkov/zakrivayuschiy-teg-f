@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
 }
@@ -40,6 +44,18 @@ input {
 ul,
 ol {
   list-style: none;
+}
+
+img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .visually-hidden {

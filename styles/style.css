@@ -10,7 +10,364 @@
 
 */
 
+.center {
+  margin: 0 auto;
+  inline-size: var(
+    --section-inline-size,
+    clamp(23.44rem, 50.08vw + 11.7rem, 43.75rem)
+  );
+}
+
 .page {
+  -webkit-padding-before: 100px;
+          padding-block-start: 100px;
+  color: var(--contrast-color, #000);
+  font: var(--font-weight-text, 400) var(--primary-font-size, 1.125rem)/1.18 var(--main-font, "Inter"), sans-serif;
+  background: var(--bg-gradient) center/cover no-repeat fixed;
+  font-variation-settings: "wght" var(--font-weight-text, 400);
   min-inline-size: 320px;
   min-block-size: 100dvb;
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: var(--border, 2px solid #000);
+  padding: var(--header-padding, clamp(7.5rem, 0.8vw + 7.3rem, 8rem)) 0;
+  font: var(--accent-font, "PressStart2P"), cursive;
+  text-align: center;
+  text-transform: var(--text-case, uppercase);
+  background-color: var(--base-color, #fff);
+}
+
+.logo {
+  font-size: var(--logo-text-size, clamp(3.0625rem, 2.4427rem + 2.6446vw, 4.0625rem));
+  line-height: 1;
+  text-decoration: none;
+}
+
+.heading {
+  font-size: var(--heading-text-size, clamp(0.875rem, 0.5263rem + 1.4876vw, 1.4375rem));
+}
+
+.main {
+  padding-block: 100px;
+}
+
+.section {
+  -webkit-margin-after: 50px;
+          margin-block-end: 50px;
+}
+
+.vertical-flow  {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap, 25px);
+}
+
+.like-icon {
+  will-change: transform, opacity;
+  inline-size: 39px;
+  block-size: 36px;
+}
+
+.floppy__icon {
+  inline-size: 21px;
+}
+
+@media (width < 376px) {
+  .floppy__icon {
+    inline-size: 28px;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* #region Карточки */
+.card {
+  border: var(--border, 2px solid #000);
+  background-color: var(--base-color, #fff);
+}
+
+.card__title {
+  -webkit-border-after: var(--border, 2px solid #000);
+          border-block-end: var(--border, 2px solid #000);
+  padding: 4px 10px;
+  font: inherit 1.22/1 var(--font-weight-title, 700);
+  font-variation-settings: "wght" var(--font-weight-title, 700);
+}
+
+.card__image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: -webkit-filter 0.5s ease;
+  transition: filter 0.5s ease;
+  transition: filter 0.5s ease, -webkit-filter 0.5s ease;
+  image-rendering: crisp-edges, -moz-crisp-edges;
+  image-rendering: crisp-edges, pixelated;
+  -ms-interpolation-mode: nearest-neighbor;
+  aspect-ratio: 1;
+}
+
+.image-label {
+  position: absolute;
+  top: 25px;
+  right: clamp(0.813rem, 3.69vw - 0.053rem, 1.563rem);
+  opacity: 0.5;
+  color: var(--contrast-color, #000);
+  font:0.875rem/1.2 var(--accent-font,"PressStart2P"),cursive;
+  text-transform: var(--text-case, uppercase);
+  text-shadow: 1px 1px 0 var(--base-color, #fff), -1px -1px 0 var(--base-color, #fff),
+    -1px 1px 0 var(--base-color, #fff), 1px -1px 0 var(--base-color, #fff);
+  mix-blend-mode: hard-light;
+}
+
+@supports (text-stroke: 1px var(--main-color, #fff)) or
+  (-webkit-text-stroke: 1px var(--main-color, #fff)) {
+  .image-label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--main-color, #fff);
+    text-stroke: 1px var(--main-color, #fff);
+  }
+}
+
+.card__content {
+  -webkit-border-before: var(--border, 2px solid #000);
+          border-block-start: var(--border, 2px solid #000);
+  padding: 25px;
+}
+
+.card__buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  gap: 6px;
+}
+
+/* #endregion Карточки */
+
+/* #region Кнопки */
+.button {
+  position: relative;
+  margin: 0;
+  border: var(--border, 2px solid #000);
+  padding: 0;
+  overflow: hidden;
+  font:0.875rem/0.9 var(--accent-font,"PressStart2P"),cursive;
+  background: var(--bg-btn-color, transparent);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:not(.card__icon-button):focus-visible {
+  box-shadow: 2px 2px 0 var(--contrast-color);
+}
+
+.card__icon-button {
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--contrast-color);
+  outline: none;
+}
+
+.card__like-button {
+  min-inline-size: 130px;
+}
+
+.save__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+@media (width < 376px) {
+  .save__button {
+    flex-direction: column;
+  }
+}
+/* #endregion Кнопки */
+
+/* #region Фильтры */
+
+/* Эффект: Золотистый оттенок как в старых JRPG */
+.filter-warm-pixel {
+  -webkit-filter: 
+    sepia(0.3) 
+    hue-rotate(10deg) 
+    saturate(1.4) 
+    contrast(1.1);
+          filter: 
+    sepia(0.3) 
+    hue-rotate(10deg) 
+    saturate(1.4) 
+    contrast(1.1);
+}
+
+/* Эффект: Мягкие цвета как в indie-пиксель играх */
+.filter-pastel {
+  -webkit-filter: 
+    brightness(1.1) 
+    saturate(0.7) 
+    contrast(0.9) 
+    hue-rotate(-5deg);
+          filter: 
+    brightness(1.1) 
+    saturate(0.7) 
+    contrast(0.9) 
+    hue-rotate(-5deg);
+}
+
+/* Эффект: Насыщенные цвета аркадных автоматов */
+.filter-arcade {
+  -webkit-filter: 
+    contrast(1.4) 
+    saturate(1.8) 
+    brightness(0.95);
+          filter: 
+    contrast(1.4) 
+    saturate(1.8) 
+    brightness(0.95);
+}
+
+/* Эффект: Game Boy Color (тёплая палитра) */
+.filter-gbc {
+  background-color: #f8e0b8;
+  -webkit-filter: 
+    sepia(0.3) 
+    hue-rotate(15deg) 
+    saturate(1.5) 
+    contrast(1.4);
+          filter: 
+    sepia(0.3) 
+    hue-rotate(15deg) 
+    saturate(1.5) 
+    contrast(1.4);
+}
+
+/* Эффект: Холодные синие тени для мрачных сцен */
+.filter-twilight {
+  -webkit-filter: 
+    brightness(0.8) 
+    contrast(1.3) 
+    hue-rotate(220deg) 
+    saturate(0.6);
+          filter: 
+    brightness(0.8) 
+    contrast(1.3) 
+    hue-rotate(220deg) 
+    saturate(0.6);
+}
+
+/* Эффект: Старая фотография для приключенческих игр */
+.filter-vintage-quest {
+  -webkit-filter: 
+    sepia(0.5) 
+    contrast(1.2) 
+    brightness(0.9) 
+    saturate(0.8);
+          filter: 
+    sepia(0.5) 
+    contrast(1.2) 
+    brightness(0.9) 
+    saturate(0.8);
+}
+
+/* Эффект: Фиолетово-розовые 80-е без глитчей*/
+.filter-synthwave {
+  -webkit-filter: 
+    hue-rotate(-15deg) 
+    saturate(2) 
+    contrast(1.3) 
+    brightness(0.9);
+          filter: 
+    hue-rotate(-15deg) 
+    saturate(2) 
+    contrast(1.3) 
+    brightness(0.9);
+}
+
+/*Эффект: Лёгкая размытость как в hand-drawn играх */
+.filter-watercolor {
+  -webkit-filter: 
+    brightness(1.05) 
+    contrast(0.9) 
+    saturate(1.1) 
+    blur(0.3px);
+          filter: 
+    brightness(1.05) 
+    contrast(0.9) 
+    saturate(1.1) 
+    blur(0.3px);
+}
+/* #endregion Фильтры */
+
+/* #region Модальное окно */
+body:has(.modal[open]) {
+  overflow: hidden;
+}
+
+.modal {
+  grid-template-columns: -webkit-min-content auto;
+  grid-template-columns: min-content auto;
+  align-items: center;
+  gap: 30px 20px;
+  padding: 30px;
+  text-transform: var(--text-case, uppercase);
+  background-color: var(--base-color, #fff);
+  inline-size: clamp(21.25rem, 15.25rem + 8vw, 22.375rem);
+}
+
+.modal[open] {
+  display: grid;
+}
+
+.modal[open]::-webkit-backdrop {
+  -webkit-backdrop-filter: brightness(25%);
+          backdrop-filter: brightness(25%);
+}
+
+.modal[open]::backdrop {
+  -webkit-backdrop-filter: brightness(25%);
+          backdrop-filter: brightness(25%);
+}
+
+.modal .floppy__icon {
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.modal__text {
+  font: 0.875rem/1.5 var(--accent-font,"PressStart2P"),cursive;
+}
+
+.modal__close-button {
+  grid-column: span 2;
+  padding: 10px;
+  text-transform: inherit;
+}
+
+@media (width < 376px) {
+  .modal {
+    padding: 30px 40px;
+    min-inline-size: 92%;
+  }
+}
+/* #endregion Модальное окно */
