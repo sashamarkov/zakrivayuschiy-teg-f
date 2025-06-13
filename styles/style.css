@@ -35,20 +35,20 @@
   gap: 20px;
   border: var(--border, 2px solid #000);
   padding: var(--header-padding, clamp(7.5rem, 0.8vw + 7.3rem, 8rem)) 0;
-  font: var(--accent-font, "PressStart2P"), cursive;
+  font-family: var(--accent-font, "PressStart2P"), cursive;
   text-align: center;
   text-transform: var(--text-case, uppercase);
   background-color: var(--base-color, #fff);
 }
 
 .logo {
-  font-size: var(--logo-text-size, clamp(3.0625rem, 2.4427rem + 2.6446vw, 4.0625rem));
+  font-size: var(--logo-text-size, clamp(3.0625rem, 2.5rem + 1.5vw, 4.0625rem));
   line-height: 1;
   text-decoration: none;
 }
 
 .heading {
-  font-size: var(--heading-text-size, clamp(0.875rem, 0.5263rem + 1.4876vw, 1.4375rem));
+  font-size: var(--heading-text-size, clamp(0.875rem, 0.5rem + 1.5vw, 1.4375rem));
 }
 
 .main {
@@ -60,7 +60,7 @@
           margin-block-end: 50px;
 }
 
-.vertical-flow  {
+.vertical-flow {
   display: flex;
   flex-direction: column;
   gap: var(--gap, 25px);
@@ -79,7 +79,7 @@
 @media (width < 376px) {
   .floppy__icon {
     inline-size: 28px;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1;
   }
 }
 

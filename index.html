@@ -23,11 +23,11 @@
     <link rel="stylesheet" href="./styles/animations.css" />
   </head>
   <body class="page">
-    <header class="header content-boundary">
+    <header class="header center">
       <a href="./index.html" class="logo">&lt;/html&gt;</a>
       <h1 class="heading">закрывающий тег</h1>
     </header>
-    <main class="main content-boundary">
+    <main class="main center">
       <section class="section vertical-flow">
         <article class="card">
           <h2 class="card__title">Фритрек и нулевой спринт: Подготовка к работе</h2>
@@ -498,7 +498,7 @@
               class="card__image filter-watercolor"
             />
             <figcaption class="image-label" aria-hidden="true">experience</figcaption>
-          </а>
+          </figure>
           <div class="card__content vertical-flow">
             <div class="card__text-container vertical-flow">
               <p class="card__text">
@@ -560,8 +560,7 @@
       <button
         type="button"
         onclick="window['modal'].showModal();"
-        aria-controls="modal"
-        class="button save__button content-boundary"
+        class="button save__button center"
         aria-label="Сохранить на память"
         aria-controls="modal"
         data-modal-target="modal"
@@ -573,7 +572,7 @@
       </button>
     </main>
 
-    <dialog class="modal" id="modal" aria-labelledby="modal-title">
+    <dialog class="modal" id="modal" aria-labelledby="modal__text">
       <svg class="floppy__icon" viewBox="0 0 21 21" aria-hidden="true" focusable="false">
         <use xlink:href="./svg/floppy.svg#floppy"></use>
       </svg>
