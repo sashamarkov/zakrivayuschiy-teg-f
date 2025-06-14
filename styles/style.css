@@ -442,7 +442,7 @@ body:has(.modal[open]) {
 }
 
 .modal__text {
-  font: 0.875rem/1.5 var(ent-font,"PressStart2P"),fantasy;
+  font: 0.875rem/1.5 var(--page-accent-font,"PressStart2P"), fantasy;
 }
 
 .modal__close-button {
