@@ -26,21 +26,21 @@
   flex-direction: column;
   gap: 20px;
   border: var(--border, 2px solid #000);
-  padding: var(--header-padding, clamp(7.5rem, 0.8vw + 7.3rem, 8rem)) 0;
-  font-family: var(--page-accent-font, "PressStart2P"), cursive;
+  padding: var(--header-padding, clamp(7.5rem, 1.322vw + 7.19rem, 8rem)) 0;
+  font-family: var(--page-accent-font, "PressStart2P"), fantasy;
   text-align: center;
   text-transform: uppercase;
   background-color: var(--page-bg-color, #fff);
 }
 
 .logo {
-  font-size: var(--logo-font-size, clamp(3.0625rem, 2.5rem + 1.5vw, 4.0625rem));
+  font-size: var(--logo-font-size, clamp(3.0625rem, 2.4427rem + 2.6446vw, 4.0625rem));
   line-height: 1;
   text-decoration: none;
 }
 
 .heading {
-  font-size: var(--heading-font-size, clamp(0.875rem, 0.5rem + 1.5vw, 1.4375rem));
+  font-size: var(--heading-font-size, clamp(0.875rem, 0.5263rem + 1.4876vw, 1.4375rem));
 }
 
 .main {
@@ -63,7 +63,7 @@
   margin: 0 auto;
   inline-size: var(
     --section-inline-size,
-    clamp(23.45rem, 50vw + 11.7rem, 43.75rem)
+    clamp(23.438rem, 50.077vw + 11.701rem, 43.75rem)
   );
 }
 
@@ -103,10 +103,10 @@
 .image-label {
   position: absolute;
   top: 25px;
-  right: clamp(0.813rem, 3.69vw - 0.053rem, 1.563rem);
+  right: clamp(0.813rem, 3.692vw - 0.053rem, 1.563rem);
   opacity: 0.5;
   color: var(--page-font-color, #000);
-  font:0.875rem/1.2 var(--page-accent-font,"PressStart2P"),cursive;
+  font:0.875rem/1.2 var(--page-accent-font,"PressStart2P"), fantasy;
   text-transform: uppercase;
   text-shadow: 1px 1px 0 var(--page-bg-color, #fff), -1px -1px 0 var(--page-bg-color, #fff),
     -1px 1px 0 var(--page-bg-color, #fff), 1px -1px 0 var(--page-bg-color, #fff);
@@ -144,7 +144,7 @@
   border: var(--border, 2px solid #000);
   padding: 0;
   overflow: hidden;
-  font:0.875rem/0.9 var(--page-accent-font,"PressStart2P"),cursive;
+  font:0.875rem/0.9 var(--page-accent-font,"PressStart2P"), fantasy;
   background: var(--page-bg-color);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
@@ -173,9 +173,8 @@
 }
 
 .card__icon-button {
-  box-shadow: none;
   border: 2px solid transparent;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s linear;
 }
 
 .card__icon-button::before {
@@ -183,36 +182,35 @@
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid #000;
-  outline: none;
+  box-shadow: none;
 }
 
 .card__icon-button:hover .core {
   fill: #000;
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:hover .main-body {
   fill: #000;
-  transition: fill 0.3s ease 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .card__icon-button:not(:hover) .core {
-  transition: fill 0.3s ease 0.03s;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .card__icon-button:not(:hover) .main-body {
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:active .core {
   fill: #f00;
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:active .main-body {
   fill: #f00;
-  transition: fill 0.3s ease 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .card__like-button {
@@ -227,7 +225,7 @@
   gap: 8px;
   margin: 0 auto;
   padding: 15px 0;
-  --section-inline-size: clamp(19.125rem, 8.923vw + 17.034rem, 20.938rem);
+  --section-inline-size: clamp(19.125rem, 8.925vw + 17.035rem, 20.940rem);
 }
 
 @media (width < 376px) {
@@ -240,7 +238,7 @@
 /* #region Иконки */
 .core,
 .main-body {
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .sparks {
@@ -255,17 +253,17 @@
 
 .like-icon.is-liked .core {
   fill: #f00;
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .main-body {
   fill: #f00;
-  transition: fill 0.3s ease 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .contour {
   fill: #f00;
-  transition: fill 0.3s ease 0.06s;
+  transition: fill 0.3s linear 0.06s;
 }
 
 .like-icon.is-liked .heart {
@@ -421,7 +419,7 @@ body:has(.modal[open]) {
   padding: 30px;
   text-transform: uppercase;
   background-color: var(--page-bg-color, #fff);
-  inline-size: clamp(21.25rem, 15.25rem + 8vw, 22.375rem);
+  inline-size: clamp(21.25rem, 5.538vw + 19.952rem, 22.375rem);
 }
 
 .modal[open] {
@@ -444,7 +442,7 @@ body:has(.modal[open]) {
 }
 
 .modal__text {
-  font: 0.875rem/1.5 var(--page-accent-font,"PressStart2P"),cursive;
+  font: 0.875rem/1.5 var(ent-font,"PressStart2P"),fantasy;
 }
 
 .modal__close-button {
