@@ -173,6 +173,9 @@
 }
 
 .card__icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 2px solid transparent;
   transition: border-color 0.3s linear;
 }
@@ -183,6 +186,7 @@
 
 .card__icon-button:focus-visible {
   box-shadow: none;
+  border: 2px solid var(--page-font-color, #000);
 }
 
 .card__icon-button:hover .core {
